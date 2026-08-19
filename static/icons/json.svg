@@ -1,0 +1,37 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2b2140"/>
+      <stop offset="100%" stop-color="#100c1c"/>
+    </linearGradient>
+    <linearGradient id="braceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f7df1e"/>
+      <stop offset="100%" stop-color="#f2b705"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background -->
+  <rect x="0" y="0" width="400" height="400" rx="64" fill="url(#bg)"/>
+
+  <!-- left brace -->
+  <text x="60" y="270" font-family="Georgia, 'Times New Roman', serif" font-size="260"
+        font-weight="700" fill="url(#braceGrad)">{</text>
+
+  <!-- right brace -->
+  <text x="230" y="270" font-family="Georgia, 'Times New Roman', serif" font-size="260"
+        font-weight="700" fill="url(#braceGrad)">}</text>
+
+  <!-- colon / key-value dot accents inside braces -->
+  <circle cx="163" cy="150" r="9" fill="#61dafb"/>
+  <circle cx="163" cy="190" r="9" fill="#ff6b6b"/>
+  <circle cx="163" cy="230" r="9" fill="#6bffb8"/>
+
+  <!-- small connecting lines suggesting key: value pairs -->
+  <line x1="180" y1="150" x2="222" y2="150" stroke="#e8e8f0" stroke-width="6" stroke-linecap="round"/>
+  <line x1="180" y1="190" x2="210" y2="190" stroke="#e8e8f0" stroke-width="6" stroke-linecap="round"/>
+  <line x1="180" y1="230" x2="230" y2="230" stroke="#e8e8f0" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- wordmark -->
+  <text x="200" y="360" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif"
+        font-size="34" font-weight="700" letter-spacing="6" fill="#f7df1e">JSON</text>
+</svg>

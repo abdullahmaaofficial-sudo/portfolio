@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<title>Abdullah - Portfolio</title>
+
+	<link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<!-- <link rel="stylesheet" href="/static/style.css"> -->
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="is-loading">
+	<div id="page-loader">
+		<div class="loader-inner">
+			<div class="loader-mark">
+				<span>A</span>
+				<svg class="loader-ring" viewBox="0 0 60 60">
+					<circle cx="30" cy="30" r="26"></circle>
+				</svg>
+			</div>
+			<div class="loader-bar-track">
+				<div class="loader-bar-fill" id="loader-bar-fill"></div>
+			</div>
+			<div class="loader-percent" id="loader-percent">0%</div>
+		</div>
+	</div>
+	<header>
+		<div class="logo">
+			<h1>Abdullah</h1>
+		</div>
+		<nav class="nav-bar">
+			<ul>
+				<li id="home" class="nav-icons"><a href="#hero-section">home</a></li>
+				<li id="about" class="nav-icons"><a href="#about-section">about</a></li>
+				<li id="project" class="nav-icons"><a href="#project-section">project</a></li>
+				<li id="skill" class="nav-icons"><a href="#skill-section">skills</a></li>
+				<li id="contact" class="nav-icons"><a href="#contact-section">contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	<nav class="nav-bar mobile-nav">
+		<ul>
+			<li id="home" class="nav-icons"><a href="#hero-section">home</a></li>
+			<li id="about" class="nav-icons"><a href="#about-section">about</a></li>
+			<li id="project" class="nav-icons"><a href="#project-section">project</a></li>
+			<li id="skill" class="nav-icons"><a href="#skill-section">skills</a></li>
+			<li id="contact" class="nav-icons"><a href="#contact-section">contact</a></li>
+		</ul>
+	</nav>
+	<main>
+		<section class="main-sections" id="hero-section">
+			<div class="img-box">
+				<img src="{{ url_for('static', filename = '/images/profile-img.png')}}" alt="profile">
+			</div>
+			<div class="content-box">
+				<div class="about-box">
+					<h1 id="intro">Hi, I'm <span>Abdullah</span></h1>
+					<h2 id="headline">Full-Stack <span>Web Developer</span></h2>
+					<p id="info">
+						I like building things on the web and learning by actually making stuff. I mostly work with Python, Flask, HTML, CSS, and JavaScript, and I'm currently getting into SQL and databases.
+					</p>
+				</div>
+				<div class="social-links">
+					<a href="https://github.com/abdullahmaaofficial-sudo" target="_blank"><i class="fa-brands fa-github"></i></a>
+					<a href="https://www.linkedin.com/in/abdullah-a-3529b73a1" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+					<a href="https://www.instagram.com/m.abdullah_arshadx/" target="_blank">
+						<img src="{{ url_for('static', filename = '/icons/instagram-logo.svg')}}">
+					</a>
+				</div>
+				<div class="buttons-box">
+					<a href="#project-section" class="hero-btns" id="pro-btn">View Projects</a>
+					<a href="#contact-section" class="hero-btns" id="con-btn">Contact Me</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="main-sections" id="about-section">
+			<div class="about-heading">
+				<h2>ABOUT ME</h2>
+			</div>
+			<div class="about">
+				<div class="paragraph" id="paragraph-1">
+					<span>
+						I'm Abdullah Arshad, a web developer. I like building things and figuring out how they work. I started with Python, and after that, I wanted a frontend for my projects, so I started learning web development.
+					</span>
+				</div>
+				<div class="paragraph" id="paragraph-2">
+					<span>
+						I like working on projects where I can actually see what I'm building. I've worked with HTML, CSS, JavaScript, and Flask to build things like weather apps, games, calculators, and other small web projects. Every project usually teaches me something I didn't know before.
+					</span>
+				</div>
+				<div class="paragraph" id="paragraph-3">
+					<span>
+						Right now, I'm learning more about SQL, databases, and backend development while continuing to improve my JavaScript and Flask skills. I don't consider myself an expert yet — I'm still learning, experimenting, breaking things, and figuring them out along the way.
+					</span>
+				</div>
+			</div>
+			<div class="education-box">
+				<div class="education">
+					<h3 class="year">2025 — Present</h3>
+					<h2 class="name" style="font-weight: 900;">🎓 Higher Secondary Education</h2>
+					<p class="institute">F.G College</p>
+				</div>
+				<div class="education">
+					<h3 class="year">2023 — 2025</h3>
+					<h2 class="name" style="font-weight: 900;">🎓 Secondary Education</h2>
+					<p class="institute">D.P School</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="main-sections" id="project-section">
+			<div class="project-heading">
+				<h2>Featured Projects</h2>
+			</div>
+			<div class="projects-box">
+				<div class="project" id="project-1">
+					<h1 class="pr-heading">
+						<span><img src="{{ url_for('static', filename = '/icons/weather-icon.svg')}}" height="25px"></span> Weather app
+					</h1>
+					<a href="https://weather-app-phi-ten-39.vercel.app/" target="_blank" class="pr-img-box">
+						<img src="{{ url_for('static', filename = '/images/weather-img.png')}}" alt="weather-img">
+					</a>
+					<div class="project-about">
+						<div class="pr-lang-box">
+							<span class="pr-lang-icons" id="flask"><img src="{{ url_for('static', filename='/icons/flask.svg')}}" alt="flask-icon"> Flask</span>
+							<span class="pr-lang-icons" id="html"><i class="fa-brands fa-html5"></i> HTML</span>
+							<span class="pr-lang-icons" id="js"><i class="fa-brands fa-square-js"></i> JS</span>
+							<span class="pr-lang-icons" id="css"><i class="fa-brands fa-css"></i> CSS</span>
+						</div>
+						<div class="pr-description">
+							<span>
+								A weather app I built to practice working with APIs and Flask. You can search for a city, use your location, check hourly and daily forecasts, and switch between temperature units.
+							</span>
+						</div>
+					</div>
+					<div class="pr-btn-box">
+						<a href="https://weather-app-phi-ten-39.vercel.app/" target="_blank" class=view-project>View project <i class="fa-solid fa-arrow-right" style="height: 15px;"></i></a>
+					</div>
+				</div>
+				<div class="project" id="project-2">
+					<h1 class="pr-heading">
+						<span><img src="{{ url_for('static', filename='/icons/tic-tac-toe-icon.svg') }}" height="25px"></span> Tic-Tac-Toe
+					</h1>
+					<a href="https://new-tac-tic-toe.vercel.app/" target="_blank" class="pr-img-box">
+						<img src="{{ url_for('static', filename='/images/tic-tac-toe.png')}}" alt="tic-tac-toe-img">
+					</a>
+					<div class="project-about">
+						<div class="pr-lang-box">
+							<span class="pr-lang-icons" id="html"><i class="fa-brands fa-html5"></i> HTML</span>
+							<span class="pr-lang-icons" id="js"><i class="fa-brands fa-square-js"></i> JS</span>
+							<span class="pr-lang-icons" id="css"><i class="fa-brands fa-css"></i> CSS</span>
+						</div>
+						<div class="pr-description">
+							<span>
+								A simple Tic-Tac-Toe game with two ways to play — against another player or against the computer. I also added keyboard controls, win and draw detection, and a restart option.
+							</span>
+						</div>
+					</div>
+					<div class="pr-btn-box">
+						<a href="https://new-tac-tic-toe.vercel.app/" target="_blank" class=view-project>View project <i class="fa-solid fa-arrow-right" style="height: 15px;"></i></a>
+					</div>
+				</div>
+				<div class="project" id="project-3">
+					<h1 class="pr-heading">
+					   <span><img src="{{ url_for('static', filename='/icons/calculator-icon.svg') }}" height="25px"></span> Calculator
+					</h1>
+					<a href="https://calculator-delta-sooty-76.vercel.app/" target="_blank" class="pr-img-box">
+						<img src="{{ url_for('static', filename='/images/calculator.png') }}" alt="calculator-img">
+					</a>
+					<div class="project-about">
+						<div class="pr-lang-box">
+							<span class="pr-lang-icons" id="flask"><img src="{{ url_for('static', filename='/icons/flask.svg') }}" alt="flask-icon"> Flask</span>
+							<span class="pr-lang-icons" id="html"><i class="fa-brands fa-html5"></i> HTML</span>
+							<span class="pr-lang-icons" id="js"><i class="fa-brands fa-square-js"></i> JS</span>
+							<span class="pr-lang-icons" id="css"><i class="fa-brands fa-css"></i> CSS</span>
+						</div>
+						<div class="pr-description">
+							<span>
+								A calculator I built to experiment with connecting a JavaScript frontend to a Flask backend. The frontend handles the interface while the calculations are sent to Python for processing.
+							</span>
+						</div>
+					</div>
+					<div class="pr-btn-box">
+						<a href="https://calculator-delta-sooty-76.vercel.app/" class=view-project>View project <i class="fa-solid fa-arrow-right" style="height: 15px;"></i></a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="main-sections" id="skill-section">
+			<div class="skills-heading">
+				<h2>MY SKILLS & </h2>
+				<h3>TECHNOLOGIES I USE</h3>
+			</div>
+			<div class="skills-box">
+				<div class="skill">
+					<div class="sk-name-box" data-tag-name="py">
+						<span class="skill-logo" id="sk-python">
+							<img src="{{ url_for('static', filename='/icons/python.svg') }}" alt="python-icon">
+						</span>
+						<span class="skill-name">Python</span>
+						<span class="arrow-icon"><i class="fa-regular fa-square-caret-down"></i></span>
+					</div>
+					<div class="sk-status"><span>• Comfortable</span></div>
+					<div class="skill-description" id="py-desc">
+						<span class="intended-arrow">------</span>
+						I can build small to medium-sized applications, work with files and APIs, structure programs with functions and classes, and solve programming problems. Python is also the language I'm most comfortable with.
+					</div>
+				</div>
+				<div class="skill">
+					<div class="sk-name-box" data-tag-name="js">
+						<span class="skill-logo"><i class="fa-brands fa-square-js"></i></span>
+						<span class="skill-name">JavaScript</span>
+						<span class="arrow-icon"><i class="fa-regular fa-square-caret-down"></i></span>
+					</div>
+					<div class="sk-status" style="background: rgba(8, 152, 218, 0.1);"><span style="color: rgba(8, 152, 218, 0.9);">• Intermediate</span></div>
+					<div class="skill-description" id="js-desc">
+						<span class="intended-arrow">------</span>
+						I'm comfortable building interactive web pages, handling events and DOM manipulation, working with APIs, and adding functionality to frontend projects. I'm still improving my JavaScript as I build more complex projects.
+					</div>
+				</div>
+				<div class="skill">
+					<div class="sk-name-box" data-tag-name="html">
+						<span class="skill-logo"><i class="fa-brands fa-html5"></i></span>
+						<span class="skill-name">HTML</span>
+						<span class="arrow-icon"><i class="fa-regular fa-square-caret-down"></i></span>
+					</div>
+					<div class="sk-status"><span>• Comfortable</span></div>
+					<div class="skill-description" id="html-desc">
+						<span class="intended-arrow">------</span>
+						I can structure complete web pages, work with forms and semantic elements, and organize HTML properly for responsive websites.
+					</div>
+				</div>
+				<div class="skill">
+					<div class="sk-name-box" data-tag-name="flask">
+						<span class="skill-logo" id="sk-flask">
+							<img src="{{ url_for('static', filename='/icons/flask.svg') }}" alt="flask-icon">
+						</span>
+						<span class="skill-name">Flask</span>
+						<span class="arrow-icon"><i class="fa-regular fa-square-caret-down"></i></span>
+					</div>
+					<div class="sk-status" style="background: rgba(8, 152, 218, 0.1);"><span style="color: rgba(8, 152, 218, 0.9);">• Intermediate</span></div>
+					<div class="skill-description" id="flask-desc">
+						<span class="intended-arrow">------</span>
+						I can build Flask applications with routes, handle requests, connect frontend pages to a Python backend, and work with APIs. I'm currently learning more about building larger backend systems
+					</div>
+				</div>
+				<div class="skill">
+					<div class="sk-name-box" data-tag-name="css">
+						<span class="skill-logo"><i class="fa-brands fa-css"></i></span>
+						<span class="skill-name">CSS</span>
+						<span class="arrow-icon"><i class="fa-regular fa-square-caret-down"></i></span>
+					</div>
+					<div class="sk-status"><span>• Comfortable</span></div>
+					<div class="skill-description" id="css-desc">
+						<span class="intended-arrow">------</span>
+						I'm comfortable creating layouts with Flexbox and Grid, making pages responsive, and working with animations, transitions, and custom designs. I'm still improving my CSS as I work on more complex layouts.
+					</div>
+				</div>
+				<div class="skill">
+					<div class="sk-name-box" data-tag-name="db">
+						<span class="skill-logo"><i class="fa-solid fa-database"></i></span>
+						<span class="skill-name">SQL</span>
+						<span class="arrow-icon"><i class="fa-regular fa-square-caret-down"></i></span>
+					</div>
+					<div class="sk-status" style="background: rgba(218, 103, 8, 0.1);"><span style="color: rgba(218, 103, 8, 0.9);">• Currently Learning</span></div>
+					<div class="skill-description" id="db-desc">
+						<span class="intended-arrow">------</span>
+						I understand the basics and I'm learning how to work with databases, write queries, and connect them to web applications.
+					</div>
+				</div>
+			</div>
+
+			<div class="techs-box">
+				<div class="skill">
+					<div class="sk-name-box" data-tag-name="git">
+						<span class="skill-logo"><i class="fa-brands fa-git-alt"></i></span>
+						<span class="skill-name">Git</span>
+						<span class="arrow-icon"><i class="fa-regular fa-square-caret-down"></i></span>
+					</div>
+					<div class="sk-status" style="background: rgba(8, 152, 218, 0.1);"><span style="color: rgba(8, 152, 218, 0.9);">• Intermediate</span></div>
+					<div class="skill-description" id="git-desc">
+						<span class="intended-arrow">------</span>
+						I'm comfortable with the everyday Git workflow, including creating repositories, making commits, working with branches, and keeping track of changes in my projects.
+					</div>
+				</div>
+
+			<div class="skill">
+				<div class="sk-name-box" data-tag-name="github">
+					<span class="skill-logo"><i class="fa-brands fa-github"></i></span>
+					<span class="skill-name">Github</span>
+					<span class="arrow-icon"><i class="fa-regular fa-square-caret-down"></i></span>
+				</div>
+				<div class="sk-status"><span>• Comfortable</span></div>
+				<div class="skill-description" id="github-desc">
+					<span class="intended-arrow">------</span>
+					I use GitHub to store my projects, manage repositories, and keep my code organized and accessible.
+				</div>
+			</div>
+			<div class="skill">
+				<div class="sk-name-box" data-tag-name="json">
+					<span class="skill-logo" id="json-logo">
+						<img src="{{ url_for('static', filename='/icons/json.svg') }}" alt="json-icon">
+					</span>
+					<span class="skill-name">JSON</span>
+					<span class="arrow-icon"><i class="fa-regular fa-square-caret-down"></i></span>
+				</div>
+				<div class="sk-status"><span>• Comfortable</span></div>
+				<div class="skill-description" id="json-desc">
+					<span class="intended-arrow">------</span>
+					I've used JSON in my Python projects for storing and loading structured data, and I'm comfortable working with JSON objects and files.
+				</div>
+			</div>
+		</div>
+		</section>
+
+		<section class="main-sections" id="contact-section">
+			<div class="contact-heading">
+				<h2>LET'S WORK TOGETHER</h2>
+				<h3>
+					Have a project idea, question, or just want to connect? Feel free to reach out. I'm always open to discussing projects, learning opportunities, and interesting ideas.
+				</h3>
+			</div>
+			<div class="contact-box">
+                <div class="co-social-box">
+					<div class="email">abdullah.maaofficial@gmail.com</div>
+                    <div class="links-box">
+                        <a href="https://github.com/abdullahmaaofficial-sudo" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                            <span>Github</span>
+                        </a>
+    
+                        <a href="https://www.linkedin.com/in/abdullah-a-3529b73a1" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <span>Linkedin</span>
+                        </a>
+    
+                        <a href="https://www.instagram.com/m.abdullah_arshadx/" target="_blank">
+                            <img src="{{ url_for('static', filename = '/icons/instagram-logo.svg')}}" alt="instagram-icon">
+                            <span>Instagram</span>
+                        </a>
+                    </div>
+				</div>
+                
+				<div class="form-box">
+					<form id="contact-form">
+						<input type="text" name="name" placeholder="Enter your name" required>
+						<input type="email" name="email" placeholder="Enter your email" required>
+						<textarea name="message" placeholder="Enter your message" required></textarea>
+						<div class="form-btn">
+                            <button type="submit">Send Message</button>
+                        </div>
+						<span id="msg-status"></span>
+					</form>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+	<footer>
+        <p>© 2026 Abdullah Arshad. All rights reserved.</p>
+    </footer>
+
+	<script src="{{ url_for('static', filename = 'script.js') }}"></script>
+	<!-- <script src="/static/script.js"></script> -->
+</body>
+</html>
