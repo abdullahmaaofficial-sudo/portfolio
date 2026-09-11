@@ -1,4 +1,4 @@
-from flask import Flask,render_template,jsonify,request
+from flask import Flask,render_template,jsonify,request,send_from_directory
 from email.message import EmailMessage 
 from dotenv import load_dotenv
 from flask_limiter import Limiter
@@ -23,6 +23,14 @@ limiter = Limiter(
 @app.route('/')
 def home():
     return render_template('index.html')
+
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory(app.static_folder, 'sitemap.xml', mimetype='application/xml')
+
+@app.route('/robots.txt')
+def robots():
+    return send_from_directory(app.static_folder, 'robots.txt', mimetype='text/plain')
 
 @app.route("/contact", methods=["POST"])
 @limiter.limit("5 per minute; 20 per day")
@@ -62,4 +70,4 @@ def ratelimit_handler(e):
     return jsonify({'sent': False, 'msg': 'Too many requests. Please try again later.'}), 429
 
 if __name__ == "__main__":
-    app.run(debug=False,host='0.0.0.0')
+    app.run()
