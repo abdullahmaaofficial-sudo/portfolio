@@ -53,29 +53,6 @@ if (backToTopBtn){
     });
 }
 
-/* ===================== Project Filters ===================== */
-const filterButtons = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project');
-
-filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-
-        projectCards.forEach(card => {
-            const matches = filter === 'all' || card.dataset.tech === filter;
-            if (matches){
-                card.style.display = 'flex';
-                if (!prefersReducedMotion && window.gsap){
-                    gsap.fromTo(card, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' });
-                }
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    });
-});
 
 /* ===================== GSAP Animations ===================== */
 if (!prefersReducedMotion && window.gsap){
@@ -178,8 +155,8 @@ let loaderWindowDone = false;
 
 function updateLoaderProgress(){
     const percent = loaderTotal === 0 ? 100 : Math.min(100, Math.round((loaderLoaded / loaderTotal) * 100));
-    barFill.style.width = percent + '%';
-    percentText.textContent = percent + '%';
+    if (barFill) barFill.style.width = percent + '%';
+    if (percentText) percentText.textContent = percent + '%';
 }
 
 function checkLoaderDone(){
@@ -194,25 +171,34 @@ function markImageLoaded(){
 
 function hidePageLoader(){
     updateLoaderProgress();
-    pageLoader.classList.add('loader-hidden');
+    if (pageLoader) pageLoader.classList.add('loader-hidden');
     document.body.classList.remove('is-loading');
 }
 
 updateLoaderProgress();
 
-loaderImages.forEach(img => {
-    if (img.complete) {
-        markImageLoaded();
-    } else {
-        img.addEventListener('load', markImageLoaded);
-        img.addEventListener('error', markImageLoaded);
-    }
-});
+if (loaderTotal === 0) {
+    loaderLoaded = 0;
+} else {
+    loaderImages.forEach(img => {
+        if (img.complete) {
+            markImageLoaded();
+        } else {
+            img.addEventListener('load', markImageLoaded, { once: true });
+            img.addEventListener('error', markImageLoaded, { once: true });
+        }
+    });
+}
 
 window.addEventListener('load', () => {
     loaderWindowDone = true;
     checkLoaderDone();
 });
+
+// Fallback safety timeout: Force hide loader after 3 seconds if assets hang
+setTimeout(() => {
+    hidePageLoader();
+}, 3000);
 
 /* ===================== Contact Form ===================== */
 contactForm.addEventListener('submit', (e) => {

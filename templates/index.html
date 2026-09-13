@@ -39,7 +39,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-	<!-- <link rel="stylesheet" href="/static/style.css"> -->
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -122,7 +121,7 @@
 	<main>
 		<section class="main-sections" id="hero-section">
 			<div class="img-box">
-				<img src="{{ url_for('static', filename = '/images/profile-img.png')}}" alt="profile">
+				<img src="{{ url_for('static', filename='images/profile-img.png')}}" alt="profile">
 			</div>
 			<div class="content-box">
 				<div class="about-box">
@@ -136,7 +135,7 @@
 					<a href="https://github.com/abdullahmaaofficial-sudo" target="_blank" rel="noopener" aria-label="GitHub profile"><i class="fa-brands fa-github"></i></a>
 					<a href="https://www.linkedin.com/in/abdullah-a-3529b73a1" target="_blank" rel="noopener" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin"></i></a>
 					<a href="https://www.instagram.com/m.abdullah_arshadx/" target="_blank" rel="noopener" aria-label="Instagram profile">
-						<img src="{{ url_for('static', filename = '/icons/instagram-logo.svg')}}" alt="">
+						<img src="{{ url_for('static', filename='icons/instagram-logo.svg')}}" alt="">
 					</a>
 				</div>
 				<div class="buttons-box">
@@ -185,23 +184,17 @@
 			<div class="project-heading">
 				<h2>Featured Projects</h2>
 			</div>
-			<div class="project-filters" role="group" aria-label="Filter projects by technology">
-				<button class="filter-btn active" data-filter="all">All</button>
-				<button class="filter-btn" data-filter="flask">Flask</button>
-				<button class="filter-btn" data-filter="fastapi">FastAPI</button>
-				<button class="filter-btn" data-filter="js">JS</button>
-			</div>
 			<div class="projects-box">
 				<div class="project" id="project-1" data-tech="flask">
 					<h1 class="pr-heading">
-						<span><img src="{{ url_for('static', filename = '/icons/weather-icon.svg')}}" height="25px"></span> Weather app
+						<span><img src="{{ url_for('static', filename='icons/weather-icon.svg')}}" height="25px"></span> Weather app
 					</h1>
 					<a href="https://weather-app-phi-ten-39.vercel.app/" target="_blank" rel="noopener" class="pr-img-box">
-						<img src="{{ url_for('static', filename = '/images/weather-img.png')}}" alt="Weather app screenshot" loading="lazy">
+						<img src="{{ url_for('static', filename='images/weather-img.png')}}" alt="Weather app screenshot" loading="lazy">
 					</a>
 					<div class="project-about">
 						<div class="pr-lang-box">
-							<span class="pr-lang-icons" id="flask"><img src="{{ url_for('static', filename='/icons/flask.svg')}}" alt="flask-icon"> Flask</span>
+							<span class="pr-lang-icons" id="flask"><img src="{{ url_for('static', filename='icons/flask.svg')}}" alt="flask-icon"> Flask</span>
 							<span class="pr-lang-icons" id="html"><i class="fa-brands fa-html5"></i> HTML</span>
 							<span class="pr-lang-icons" id="js"><i class="fa-brands fa-square-js"></i> JS</span>
 							<span class="pr-lang-icons" id="css"><i class="fa-brands fa-css"></i> CSS</span>
@@ -219,10 +212,10 @@
 				</div>
 				<div class="project" id="project-2" data-tech="js">
 					<h1 class="pr-heading">
-						<span><img src="{{ url_for('static', filename='/icons/tic-tac-toe-icon.svg') }}" height="25px"></span> Tic-Tac-Toe
+						<span><img src="{{ url_for('static', filename='icons/tic-tac-toe-icon.svg') }}" height="25px"></span> Tic-Tac-Toe
 					</h1>
 					<a href="https://new-tac-tic-toe.vercel.app/" target="_blank" rel="noopener" class="pr-img-box">
-						<img src="{{ url_for('static', filename='/images/tic-tac-toe.png')}}" alt="Tic-Tac-Toe game screenshot" loading="lazy">
+						<img src="{{ url_for('static', filename='images/tic-tac-toe.png')}}" alt="Tic-Tac-Toe game screenshot" loading="lazy">
 					</a>
 					<div class="project-about">
 						<div class="pr-lang-box">
@@ -243,14 +236,14 @@
 				</div>
 				<div class="project" id="project-3" data-tech="flask">
 					<h1 class="pr-heading">
-					   <span><img src="{{ url_for('static', filename='/icons/calculator-icon.svg') }}" height="25px"></span> Calculator
+					   <span><img src="{{ url_for('static', filename='icons/calculator-icon.svg') }}" height="25px"></span> Calculator
 					</h1>
 					<a href="https://calculator-delta-sooty-76.vercel.app/" target="_blank" rel="noopener" class="pr-img-box">
-						<img src="{{ url_for('static', filename='/images/calculator.png') }}" alt="Calculator app screenshot" loading="lazy">
+						<img src="{{ url_for('static', filename='images/calculator.png') }}" alt="Calculator app screenshot" loading="lazy">
 					</a>
 					<div class="project-about">
 						<div class="pr-lang-box">
-							<span class="pr-lang-icons" id="flask"><img src="{{ url_for('static', filename='/icons/flask.svg') }}" alt="flask-icon"> Flask</span>
+							<span class="pr-lang-icons" id="flask"><img src="{{ url_for('static', filename='icons/flask.svg') }}" alt="flask-icon"> Flask</span>
 							<span class="pr-lang-icons" id="html"><i class="fa-brands fa-html5"></i> HTML</span>
 							<span class="pr-lang-icons" id="js"><i class="fa-brands fa-square-js"></i> JS</span>
 							<span class="pr-lang-icons" id="css"><i class="fa-brands fa-css"></i> CSS</span>
@@ -269,14 +262,14 @@
 
 				<div class="project" id="project-4" data-tech="fastapi">
 					<h1 class="pr-heading">
-					   <span><img src="{{ url_for('static', filename='/images/meridian-icon.png') }}" height="25px"></span> Meridian
+					   <span><img src="{{ url_for('static', filename='images/meridian-icon.png') }}" height="25px"></span> Meridian
 					</h1>
 					<a href="https://meridian-wine-nine.vercel.app/" target="_blank" rel="noopener" class="pr-img-box">
-						<img src="{{ url_for('static', filename='/images/meridian.png') }}" alt="Meridian dictionary app screenshot" loading="lazy">
+						<img src="{{ url_for('static', filename='images/meridian.png') }}" alt="Meridian dictionary app screenshot" loading="lazy">
 					</a>
 					<div class="project-about">
 						<div class="pr-lang-box">
-							<span class="pr-lang-icons" id="fastapi"><img src="{{ url_for('static', filename='/icons/fastapi.svg') }}" alt="fastapi-icon"> FastApi</span>
+							<span class="pr-lang-icons" id="fastapi"><img src="{{ url_for('static', filename='icons/fastapi.svg') }}" alt="fastapi-icon"> FastApi</span>
 							<span class="pr-lang-icons" id="html"><i class="fa-brands fa-html5"></i> HTML</span>
 							<span class="pr-lang-icons" id="js"><i class="fa-brands fa-square-js"></i> JS</span>
 							<span class="pr-lang-icons" id="css"><i class="fa-brands fa-css"></i> CSS</span>
@@ -305,7 +298,7 @@
 				<h4 class="skill-group-title">Languages & Markup</h4>
 				<div class="skills-box">
 					<div class="skill-chip" data-level="3">
-						<span class="skill-logo" id="sk-python"><img src="{{ url_for('static', filename='/icons/python.svg') }}" alt="" loading="lazy"></span>
+						<span class="skill-logo" id="sk-python"><img src="{{ url_for('static', filename='icons/python.svg') }}" alt="" loading="lazy"></span>
 						<span class="skill-name">Python</span>
 						<span class="skill-level-dots" aria-hidden="true"><i class="dot filled"></i><i class="dot filled"></i><i class="dot filled"></i></span>
 						<span class="sk-status"><span>Comfortable</span></span>
@@ -341,13 +334,13 @@
 				<h4 class="skill-group-title">Frameworks & Backend</h4>
 				<div class="skills-box">
 					<div class="skill-chip" data-level="2">
-						<span class="skill-logo" id="sk-flask"><img src="{{ url_for('static', filename='/icons/flask.svg') }}" alt="" loading="lazy"></span>
+						<span class="skill-logo" id="sk-flask"><img src="{{ url_for('static', filename='icons/flask.svg') }}" alt="" loading="lazy"></span>
 						<span class="skill-name">Flask</span>
 						<span class="skill-level-dots" aria-hidden="true"><i class="dot filled"></i><i class="dot filled"></i><i class="dot"></i></span>
 						<span class="sk-status level-intermediate"><span>Intermediate</span></span>
 					</div>
 					<div class="skill-chip" data-level="2">
-						<span class="skill-logo" id="sk-fastapi"><img src="{{ url_for('static', filename='/icons/fastapi.svg') }}" alt="" loading="lazy"></span>
+						<span class="skill-logo" id="sk-fastapi"><img src="{{ url_for('static', filename='icons/fastapi.svg') }}" alt="" loading="lazy"></span>
 						<span class="skill-name">FastAPI</span>
 						<span class="skill-level-dots" aria-hidden="true"><i class="dot filled"></i><i class="dot filled"></i><i class="dot"></i></span>
 						<span class="sk-status level-intermediate"><span>Intermediate</span></span>
@@ -379,7 +372,7 @@
 						<span class="sk-status level-intermediate"><span>Intermediate</span></span>
 					</div>
 					<div class="skill-chip" data-level="3">
-						<span class="skill-logo" id="json-logo"><img src="{{ url_for('static', filename='/icons/json.svg') }}" alt="" loading="lazy"></span>
+						<span class="skill-logo" id="json-logo"><img src="{{ url_for('static', filename='icons/json.svg') }}" alt="" loading="lazy"></span>
 						<span class="skill-name">JSON</span>
 						<span class="skill-level-dots" aria-hidden="true"><i class="dot filled"></i><i class="dot filled"></i><i class="dot filled"></i></span>
 						<span class="sk-status"><span>Comfortable</span></span>
@@ -410,7 +403,7 @@
                         </a>
     
                         <a href="https://www.instagram.com/m.abdullah_arshadx/" target="_blank" rel="noopener">
-                            <img src="{{ url_for('static', filename = '/icons/instagram-logo.svg')}}" alt="instagram-icon">
+                            <img src="{{ url_for('static', filename='icons/instagram-logo.svg')}}" alt="instagram-icon">
                             <span>Instagram</span>
                         </a>
                     </div>
@@ -448,6 +441,6 @@
         <p>© 2026 Abdullah Arshad. All rights reserved.</p>
     </footer>
 
-	<script src="{{ url_for('static', filename = 'script.js') }}"></script>
+	<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
