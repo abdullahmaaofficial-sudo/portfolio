@@ -1,6 +1,0 @@
-<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-  <rect width="64" height="64" rx="14" fill="#0F172A"/>
-  <text x="32" y="41" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="24" font-weight="700">
-    <tspan fill="#2563EB">&lt;</tspan><tspan fill="#F0F4F8">A</tspan><tspan fill="#2563EB">/&gt;</tspan>
-  </text>
-</svg>

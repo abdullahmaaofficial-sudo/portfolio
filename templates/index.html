@@ -21,11 +21,19 @@
 	<meta name="twitter:image" content="https://portfolio-roan-nine-20.vercel.app/static/images/profile-img.png">
 
 	<link rel="canonical" href="https://portfolio-roan-nine-20.vercel.app/">
-	<link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+
+	<!-- Favicons (all devices) -->
+	<link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon/favicon.svg') }}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon/apple-touch-icon.png') }}">
+	<link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
+	<meta name="theme-color" content="#0B1A2E">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -34,6 +42,24 @@
 	<!-- <link rel="stylesheet" href="/static/style.css"> -->
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"name": "Abdullah Arshad",
+		"jobTitle": "Full-Stack Web Developer",
+		"url": "https://portfolio-roan-nine-20.vercel.app/",
+		"image": "https://portfolio-roan-nine-20.vercel.app/static/images/profile-img.png",
+		"email": "mailto:abdullah.maaofficial@gmail.com",
+		"sameAs": [
+			"https://github.com/abdullahmaaofficial-sudo",
+			"https://www.linkedin.com/in/abdullah-a-3529b73a1",
+			"https://www.instagram.com/m.abdullah_arshadx/"
+		],
+		"knowsAbout": ["Python", "Flask", "FastAPI", "JavaScript", "HTML", "CSS", "SQL", "Git"]
+	}
+	</script>
 </head>
 <body class="is-loading">
 	<div id="page-loader">
@@ -54,7 +80,7 @@
 		<div class="logo">
 			<h1>Abdullah</h1>
 		</div>
-		<nav class="nav-bar">
+		<nav class="nav-bar desktop-nav">
 			<ul>
 				<li id="home" class="nav-icons"><a href="#hero-section">home</a></li>
 				<li id="about" class="nav-icons"><a href="#about-section">about</a></li>
@@ -63,16 +89,36 @@
 				<li id="contact" class="nav-icons"><a href="#contact-section">contact</a></li>
 			</ul>
 		</nav>
+		<button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-sidebar">
+			<span class="bar"></span>
+			<span class="bar"></span>
+			<span class="bar"></span>
+		</button>
 	</header>
-	<nav class="nav-bar mobile-nav">
-		<ul>
-			<li id="home" class="nav-icons"><a href="#hero-section">home</a></li>
-			<li id="about" class="nav-icons"><a href="#about-section">about</a></li>
-			<li id="project" class="nav-icons"><a href="#project-section">project</a></li>
-			<li id="skill" class="nav-icons"><a href="#skill-section">skills</a></li>
-			<li id="contact" class="nav-icons"><a href="#contact-section">contact</a></li>
-		</ul>
-	</nav>
+
+	<div id="sidebar-overlay" class="sidebar-overlay"></div>
+	<aside id="mobile-sidebar" class="mobile-sidebar" aria-hidden="true">
+		<div class="sidebar-header">
+			<h2>Menu</h2>
+			<button id="sidebar-close" class="sidebar-close" aria-label="Close menu">
+				<i class="fa-solid fa-xmark"></i>
+			</button>
+		</div>
+		<nav class="sidebar-nav">
+			<ul>
+				<li class="nav-icons"><a href="#hero-section"><i class="fa-solid fa-house"></i> Home</a></li>
+				<li class="nav-icons"><a href="#about-section"><i class="fa-solid fa-user"></i> About</a></li>
+				<li class="nav-icons"><a href="#project-section"><i class="fa-solid fa-diagram-project"></i> Project</a></li>
+				<li class="nav-icons"><a href="#skill-section"><i class="fa-solid fa-code"></i> Skills</a></li>
+				<li class="nav-icons"><a href="#contact-section"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+			</ul>
+		</nav>
+	</aside>
+
+	<button id="back-to-top" class="back-to-top" aria-label="Back to top">
+		<i class="fa-solid fa-arrow-up"></i>
+	</button>
+
 	<main>
 		<section class="main-sections" id="hero-section">
 			<div class="img-box">
@@ -87,10 +133,10 @@
 					</p>
 				</div>
 				<div class="social-links">
-					<a href="https://github.com/abdullahmaaofficial-sudo" target="_blank"><i class="fa-brands fa-github"></i></a>
-					<a href="https://www.linkedin.com/in/abdullah-a-3529b73a1" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-					<a href="https://www.instagram.com/m.abdullah_arshadx/" target="_blank">
-						<img src="{{ url_for('static', filename = '/icons/instagram-logo.svg')}}">
+					<a href="https://github.com/abdullahmaaofficial-sudo" target="_blank" rel="noopener" aria-label="GitHub profile"><i class="fa-brands fa-github"></i></a>
+					<a href="https://www.linkedin.com/in/abdullah-a-3529b73a1" target="_blank" rel="noopener" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin"></i></a>
+					<a href="https://www.instagram.com/m.abdullah_arshadx/" target="_blank" rel="noopener" aria-label="Instagram profile">
+						<img src="{{ url_for('static', filename = '/icons/instagram-logo.svg')}}" alt="">
 					</a>
 				</div>
 				<div class="buttons-box">
@@ -139,13 +185,19 @@
 			<div class="project-heading">
 				<h2>Featured Projects</h2>
 			</div>
+			<div class="project-filters" role="group" aria-label="Filter projects by technology">
+				<button class="filter-btn active" data-filter="all">All</button>
+				<button class="filter-btn" data-filter="flask">Flask</button>
+				<button class="filter-btn" data-filter="fastapi">FastAPI</button>
+				<button class="filter-btn" data-filter="js">JS</button>
+			</div>
 			<div class="projects-box">
-				<div class="project" id="project-1">
+				<div class="project" id="project-1" data-tech="flask">
 					<h1 class="pr-heading">
 						<span><img src="{{ url_for('static', filename = '/icons/weather-icon.svg')}}" height="25px"></span> Weather app
 					</h1>
-					<a href="https://weather-app-phi-ten-39.vercel.app/" target="_blank" class="pr-img-box">
-						<img src="{{ url_for('static', filename = '/images/weather-img.png')}}" alt="weather-img">
+					<a href="https://weather-app-phi-ten-39.vercel.app/" target="_blank" rel="noopener" class="pr-img-box">
+						<img src="{{ url_for('static', filename = '/images/weather-img.png')}}" alt="Weather app screenshot" loading="lazy">
 					</a>
 					<div class="project-about">
 						<div class="pr-lang-box">
@@ -161,15 +213,16 @@
 						</div>
 					</div>
 					<div class="pr-btn-box">
-						<a href="https://weather-app-phi-ten-39.vercel.app/" target="_blank" class=view-project>View project <i class="fa-solid fa-arrow-right" style="height: 15px;"></i></a>
+						<a href="https://weather-app-phi-ten-39.vercel.app/" target="_blank" rel="noopener" class="view-project">View project <i class="fa-solid fa-arrow-right" style="height: 15px;"></i></a>
+						<a href="https://github.com/abdullahmaaofficial-sudo/weather-app" class="github-repo" target="_blank" rel="noopener" title="github repository"><i class="fa-brands fa-github"></i></a>
 					</div>
 				</div>
-				<div class="project" id="project-2">
+				<div class="project" id="project-2" data-tech="js">
 					<h1 class="pr-heading">
 						<span><img src="{{ url_for('static', filename='/icons/tic-tac-toe-icon.svg') }}" height="25px"></span> Tic-Tac-Toe
 					</h1>
-					<a href="https://new-tac-tic-toe.vercel.app/" target="_blank" class="pr-img-box">
-						<img src="{{ url_for('static', filename='/images/tic-tac-toe.png')}}" alt="tic-tac-toe-img">
+					<a href="https://new-tac-tic-toe.vercel.app/" target="_blank" rel="noopener" class="pr-img-box">
+						<img src="{{ url_for('static', filename='/images/tic-tac-toe.png')}}" alt="Tic-Tac-Toe game screenshot" loading="lazy">
 					</a>
 					<div class="project-about">
 						<div class="pr-lang-box">
@@ -184,15 +237,16 @@
 						</div>
 					</div>
 					<div class="pr-btn-box">
-						<a href="https://new-tac-tic-toe.vercel.app/" target="_blank" class=view-project>View project <i class="fa-solid fa-arrow-right" style="height: 15px;"></i></a>
+						<a href="https://new-tac-tic-toe.vercel.app/" target="_blank" rel="noopener" class="view-project">View project <i class="fa-solid fa-arrow-right" style="height: 15px;"></i></a>
+						<a href="https://github.com/abdullahmaaofficial-sudo/New-Tac-tic-toe" class="github-repo" target="_blank" rel="noopener" title="github repository"><i class="fa-brands fa-github"></i></a>
 					</div>
 				</div>
-				<div class="project" id="project-3">
+				<div class="project" id="project-3" data-tech="flask">
 					<h1 class="pr-heading">
 					   <span><img src="{{ url_for('static', filename='/icons/calculator-icon.svg') }}" height="25px"></span> Calculator
 					</h1>
-					<a href="https://calculator-delta-sooty-76.vercel.app/" target="_blank" class="pr-img-box">
-						<img src="{{ url_for('static', filename='/images/calculator.png') }}" alt="calculator-img">
+					<a href="https://calculator-delta-sooty-76.vercel.app/" target="_blank" rel="noopener" class="pr-img-box">
+						<img src="{{ url_for('static', filename='/images/calculator.png') }}" alt="Calculator app screenshot" loading="lazy">
 					</a>
 					<div class="project-about">
 						<div class="pr-lang-box">
@@ -208,7 +262,34 @@
 						</div>
 					</div>
 					<div class="pr-btn-box">
-						<a href="https://calculator-delta-sooty-76.vercel.app/" class=view-project>View project <i class="fa-solid fa-arrow-right" style="height: 15px;"></i></a>
+						<a href="https://calculator-delta-sooty-76.vercel.app/" target="_blank" rel="noopener" class="view-project">View project <i class="fa-solid fa-arrow-right" style="height: 15px;"></i></a>
+						<a href="https://github.com/abdullahmaaofficial-sudo/Calculator" class="github-repo" target="_blank" rel="noopener" title="github repository"><i class="fa-brands fa-github"></i></a>
+					</div>
+				</div>
+
+				<div class="project" id="project-4" data-tech="fastapi">
+					<h1 class="pr-heading">
+					   <span><img src="{{ url_for('static', filename='/images/meridian-icon.png') }}" height="25px"></span> Meridian
+					</h1>
+					<a href="https://meridian-wine-nine.vercel.app/" target="_blank" rel="noopener" class="pr-img-box">
+						<img src="{{ url_for('static', filename='/images/meridian.png') }}" alt="Meridian dictionary app screenshot" loading="lazy">
+					</a>
+					<div class="project-about">
+						<div class="pr-lang-box">
+							<span class="pr-lang-icons" id="fastapi"><img src="{{ url_for('static', filename='/icons/fastapi.svg') }}" alt="fastapi-icon"> FastApi</span>
+							<span class="pr-lang-icons" id="html"><i class="fa-brands fa-html5"></i> HTML</span>
+							<span class="pr-lang-icons" id="js"><i class="fa-brands fa-square-js"></i> JS</span>
+							<span class="pr-lang-icons" id="css"><i class="fa-brands fa-css"></i> CSS</span>
+						</div>
+						<div class="pr-description">
+							<span>
+								A modern dictionary and translation web app featuring word definitions, phonetics, pronunciations, synonyms, antonyms, and multilingual translation, powered by FastAPI.
+							</span>
+						</div>
+					</div>
+					<div class="pr-btn-box">
+						<a href="https://meridian-wine-nine.vercel.app/" target="_blank" rel="noopener" class="view-project">View project <i class="fa-solid fa-arrow-right" style="height: 15px;"></i></a>
+						<a href="https://github.com/abdullahmaaofficial-sudo/Meridian" class="github-repo" target="_blank" rel="noopener" title="github repository"><i class="fa-brands fa-github"></i></a>
 					</div>
 				</div>
 			</div>
@@ -219,126 +300,92 @@
 				<h2>MY SKILLS & </h2>
 				<h3>TECHNOLOGIES I USE</h3>
 			</div>
-			<div class="skills-box">
-				<div class="skill">
-					<div class="sk-name-box" data-tag-name="py">
-						<span class="skill-logo" id="sk-python">
-							<img src="{{ url_for('static', filename='/icons/python.svg') }}" alt="python-icon">
-						</span>
+
+			<div class="skill-group">
+				<h4 class="skill-group-title">Languages & Markup</h4>
+				<div class="skills-box">
+					<div class="skill-chip" data-level="3">
+						<span class="skill-logo" id="sk-python"><img src="{{ url_for('static', filename='/icons/python.svg') }}" alt="" loading="lazy"></span>
 						<span class="skill-name">Python</span>
-						<span class="arrow-icon"><i class="fa-regular fa-square-caret-down"></i></span>
+						<span class="skill-level-dots" aria-hidden="true"><i class="dot filled"></i><i class="dot filled"></i><i class="dot filled"></i></span>
+						<span class="sk-status"><span>Comfortable</span></span>
 					</div>
-					<div class="sk-status"><span>• Comfortable</span></div>
-					<div class="skill-description" id="py-desc">
-						<span class="intended-arrow">------</span>
-						I can build small to medium-sized applications, work with files and APIs, structure programs with functions and classes, and solve programming problems. Python is also the language I'm most comfortable with.
-					</div>
-				</div>
-				<div class="skill">
-					<div class="sk-name-box" data-tag-name="js">
+					<div class="skill-chip" data-level="2">
 						<span class="skill-logo"><i class="fa-brands fa-square-js"></i></span>
 						<span class="skill-name">JavaScript</span>
-						<span class="arrow-icon"><i class="fa-regular fa-square-caret-down"></i></span>
+						<span class="skill-level-dots" aria-hidden="true"><i class="dot filled"></i><i class="dot filled"></i><i class="dot"></i></span>
+						<span class="sk-status level-intermediate"><span>Intermediate</span></span>
 					</div>
-					<div class="sk-status" style="background: rgba(8, 152, 218, 0.1);"><span style="color: rgba(8, 152, 218, 0.9);">• Intermediate</span></div>
-					<div class="skill-description" id="js-desc">
-						<span class="intended-arrow">------</span>
-						I'm comfortable building interactive web pages, handling events and DOM manipulation, working with APIs, and adding functionality to frontend projects. I'm still improving my JavaScript as I build more complex projects.
-					</div>
-				</div>
-				<div class="skill">
-					<div class="sk-name-box" data-tag-name="html">
+					<div class="skill-chip" data-level="3">
 						<span class="skill-logo"><i class="fa-brands fa-html5"></i></span>
 						<span class="skill-name">HTML</span>
-						<span class="arrow-icon"><i class="fa-regular fa-square-caret-down"></i></span>
+						<span class="skill-level-dots" aria-hidden="true"><i class="dot filled"></i><i class="dot filled"></i><i class="dot filled"></i></span>
+						<span class="sk-status"><span>Comfortable</span></span>
 					</div>
-					<div class="sk-status"><span>• Comfortable</span></div>
-					<div class="skill-description" id="html-desc">
-						<span class="intended-arrow">------</span>
-						I can structure complete web pages, work with forms and semantic elements, and organize HTML properly for responsive websites.
-					</div>
-				</div>
-				<div class="skill">
-					<div class="sk-name-box" data-tag-name="flask">
-						<span class="skill-logo" id="sk-flask">
-							<img src="{{ url_for('static', filename='/icons/flask.svg') }}" alt="flask-icon">
-						</span>
-						<span class="skill-name">Flask</span>
-						<span class="arrow-icon"><i class="fa-regular fa-square-caret-down"></i></span>
-					</div>
-					<div class="sk-status" style="background: rgba(8, 152, 218, 0.1);"><span style="color: rgba(8, 152, 218, 0.9);">• Intermediate</span></div>
-					<div class="skill-description" id="flask-desc">
-						<span class="intended-arrow">------</span>
-						I can build Flask applications with routes, handle requests, connect frontend pages to a Python backend, and work with APIs. I'm currently learning more about building larger backend systems
-					</div>
-				</div>
-				<div class="skill">
-					<div class="sk-name-box" data-tag-name="css">
+					<div class="skill-chip" data-level="3">
 						<span class="skill-logo"><i class="fa-brands fa-css"></i></span>
 						<span class="skill-name">CSS</span>
-						<span class="arrow-icon"><i class="fa-regular fa-square-caret-down"></i></span>
+						<span class="skill-level-dots" aria-hidden="true"><i class="dot filled"></i><i class="dot filled"></i><i class="dot filled"></i></span>
+						<span class="sk-status"><span>Comfortable</span></span>
 					</div>
-					<div class="sk-status"><span>• Comfortable</span></div>
-					<div class="skill-description" id="css-desc">
-						<span class="intended-arrow">------</span>
-						I'm comfortable creating layouts with Flexbox and Grid, making pages responsive, and working with animations, transitions, and custom designs. I'm still improving my CSS as I work on more complex layouts.
-					</div>
-				</div>
-				<div class="skill">
-					<div class="sk-name-box" data-tag-name="db">
+					<div class="skill-chip" data-level="1">
 						<span class="skill-logo"><i class="fa-solid fa-database"></i></span>
 						<span class="skill-name">SQL</span>
-						<span class="arrow-icon"><i class="fa-regular fa-square-caret-down"></i></span>
-					</div>
-					<div class="sk-status" style="background: rgba(218, 103, 8, 0.1);"><span style="color: rgba(218, 103, 8, 0.9);">• Currently Learning</span></div>
-					<div class="skill-description" id="db-desc">
-						<span class="intended-arrow">------</span>
-						I understand the basics and I'm learning how to work with databases, write queries, and connect them to web applications.
+						<span class="skill-level-dots" aria-hidden="true"><i class="dot filled"></i><i class="dot"></i><i class="dot"></i></span>
+						<span class="sk-status level-learning"><span>Learning</span></span>
 					</div>
 				</div>
 			</div>
 
-			<div class="techs-box">
-				<div class="skill">
-					<div class="sk-name-box" data-tag-name="git">
+			<div class="skill-group">
+				<h4 class="skill-group-title">Frameworks & Backend</h4>
+				<div class="skills-box">
+					<div class="skill-chip" data-level="2">
+						<span class="skill-logo" id="sk-flask"><img src="{{ url_for('static', filename='/icons/flask.svg') }}" alt="" loading="lazy"></span>
+						<span class="skill-name">Flask</span>
+						<span class="skill-level-dots" aria-hidden="true"><i class="dot filled"></i><i class="dot filled"></i><i class="dot"></i></span>
+						<span class="sk-status level-intermediate"><span>Intermediate</span></span>
+					</div>
+					<div class="skill-chip" data-level="2">
+						<span class="skill-logo" id="sk-fastapi"><img src="{{ url_for('static', filename='/icons/fastapi.svg') }}" alt="" loading="lazy"></span>
+						<span class="skill-name">FastAPI</span>
+						<span class="skill-level-dots" aria-hidden="true"><i class="dot filled"></i><i class="dot filled"></i><i class="dot"></i></span>
+						<span class="sk-status level-intermediate"><span>Intermediate</span></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="skill-group">
+				<h4 class="skill-group-title">Tools & Deployment</h4>
+				<div class="techs-box">
+					<div class="skill-chip" data-level="2">
 						<span class="skill-logo"><i class="fa-brands fa-git-alt"></i></span>
 						<span class="skill-name">Git</span>
-						<span class="arrow-icon"><i class="fa-regular fa-square-caret-down"></i></span>
+						<span class="skill-level-dots" aria-hidden="true"><i class="dot filled"></i><i class="dot filled"></i><i class="dot"></i></span>
+						<span class="sk-status level-intermediate"><span>Intermediate</span></span>
 					</div>
-					<div class="sk-status" style="background: rgba(8, 152, 218, 0.1);"><span style="color: rgba(8, 152, 218, 0.9);">• Intermediate</span></div>
-					<div class="skill-description" id="git-desc">
-						<span class="intended-arrow">------</span>
-						I'm comfortable with the everyday Git workflow, including creating repositories, making commits, working with branches, and keeping track of changes in my projects.
+					<div class="skill-chip" data-level="3">
+						<span class="skill-logo"><i class="fa-brands fa-github"></i></span>
+						<span class="skill-name">GitHub</span>
+						<span class="skill-level-dots" aria-hidden="true"><i class="dot filled"></i><i class="dot filled"></i><i class="dot filled"></i></span>
+						<span class="sk-status"><span>Comfortable</span></span>
 					</div>
-				</div>
-
-			<div class="skill">
-				<div class="sk-name-box" data-tag-name="github">
-					<span class="skill-logo"><i class="fa-brands fa-github"></i></span>
-					<span class="skill-name">Github</span>
-					<span class="arrow-icon"><i class="fa-regular fa-square-caret-down"></i></span>
-				</div>
-				<div class="sk-status"><span>• Comfortable</span></div>
-				<div class="skill-description" id="github-desc">
-					<span class="intended-arrow">------</span>
-					I use GitHub to store my projects, manage repositories, and keep my code organized and accessible.
+					<div class="skill-chip" data-level="2">
+						<span class="skill-logo" id="sk-vercel">
+							<svg width="18" height="18" viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M256 48 496 464H16z"/></svg>
+						</span>
+						<span class="skill-name">Vercel</span>
+						<span class="skill-level-dots" aria-hidden="true"><i class="dot filled"></i><i class="dot filled"></i><i class="dot"></i></span>
+						<span class="sk-status level-intermediate"><span>Intermediate</span></span>
+					</div>
+					<div class="skill-chip" data-level="3">
+						<span class="skill-logo" id="json-logo"><img src="{{ url_for('static', filename='/icons/json.svg') }}" alt="" loading="lazy"></span>
+						<span class="skill-name">JSON</span>
+						<span class="skill-level-dots" aria-hidden="true"><i class="dot filled"></i><i class="dot filled"></i><i class="dot filled"></i></span>
+						<span class="sk-status"><span>Comfortable</span></span>
+					</div>
 				</div>
 			</div>
-			<div class="skill">
-				<div class="sk-name-box" data-tag-name="json">
-					<span class="skill-logo" id="json-logo">
-						<img src="{{ url_for('static', filename='/icons/json.svg') }}" alt="json-icon">
-					</span>
-					<span class="skill-name">JSON</span>
-					<span class="arrow-icon"><i class="fa-regular fa-square-caret-down"></i></span>
-				</div>
-				<div class="sk-status"><span>• Comfortable</span></div>
-				<div class="skill-description" id="json-desc">
-					<span class="intended-arrow">------</span>
-					I've used JSON in my Python projects for storing and loading structured data, and I'm comfortable working with JSON objects and files.
-				</div>
-			</div>
-		</div>
 		</section>
 
 		<section class="main-sections" id="contact-section">
@@ -352,17 +399,17 @@
                 <div class="co-social-box">
 					<div class="email">abdullah.maaofficial@gmail.com</div>
                     <div class="links-box">
-                        <a href="https://github.com/abdullahmaaofficial-sudo" target="_blank">
+                        <a href="https://github.com/abdullahmaaofficial-sudo" target="_blank" rel="noopener">
                             <i class="fa-brands fa-github"></i>
                             <span>Github</span>
                         </a>
     
-                        <a href="https://www.linkedin.com/in/abdullah-a-3529b73a1" target="_blank">
+                        <a href="https://www.linkedin.com/in/abdullah-a-3529b73a1" target="_blank" rel="noopener">
                             <i class="fa-brands fa-linkedin"></i>
                             <span>Linkedin</span>
                         </a>
     
-                        <a href="https://www.instagram.com/m.abdullah_arshadx/" target="_blank">
+                        <a href="https://www.instagram.com/m.abdullah_arshadx/" target="_blank" rel="noopener">
                             <img src="{{ url_for('static', filename = '/icons/instagram-logo.svg')}}" alt="instagram-icon">
                             <span>Instagram</span>
                         </a>
@@ -371,13 +418,25 @@
                 
 				<div class="form-box">
 					<form id="contact-form">
-						<input type="text" name="name" placeholder="Enter your name" required>
-						<input type="email" name="email" placeholder="Enter your email" required>
-						<textarea name="message" placeholder="Enter your message" required></textarea>
+						<label class="sr-only" for="contact-name">Your name</label>
+						<input type="text" id="contact-name" name="name" placeholder="Enter your name" required>
+
+						<label class="sr-only" for="contact-email">Your email</label>
+						<input type="email" id="contact-email" name="email" placeholder="Enter your email" required>
+
+						<label class="sr-only" for="contact-message">Your message</label>
+						<textarea id="contact-message" name="message" placeholder="Enter your message" required></textarea>
+
+						<!-- Honeypot field: hidden from real users, catches simple bots -->
+						<div class="hp-field" aria-hidden="true">
+							<label for="website">Website</label>
+							<input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+						</div>
+
 						<div class="form-btn">
                             <button type="submit">Send Message</button>
                         </div>
-						<span id="msg-status"></span>
+						<span id="msg-status" role="status" aria-live="polite"></span>
 					</form>
 				</div>
 			</div>
@@ -390,6 +449,5 @@
     </footer>
 
 	<script src="{{ url_for('static', filename = 'script.js') }}"></script>
-	<!-- <script src="/static/script.js"></script> -->
 </body>
 </html>
