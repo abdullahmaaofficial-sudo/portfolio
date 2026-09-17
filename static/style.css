@@ -476,7 +476,7 @@ main{
     opacity: 0.9;
 }
 .education > h2{
-    font-size: clamp(0.95rem,4vw,1.5rem); 
+    font-size: clamp(0.85rem,3.7vw,1.2rem); 
     color: rgb(63, 74, 230);
     padding-bottom: 0.8rem;
     font-family: var(--heading);
@@ -1010,7 +1010,7 @@ footer > p{
         flex-direction: column;
         padding: 4rem 0;
         border-radius: 15px;
-        background: var(--hero-color);
+        background: var(--card-color);
         background-attachment: fixed;
         border: 1px solid var(--light-white);
         box-shadow: var(--all-side-shadow); 
@@ -1022,10 +1022,6 @@ footer > p{
     }
     #intro,#headline,#info{text-align: center;}
     #info{padding: 0 1rem; width: 80ch;}
-
-    /* .projects-box{
-        grid-template-columns: repeat(2,1fr);
-    } */
 
     .skill-group{ padding: 0 1.2rem; }
 
@@ -1049,9 +1045,7 @@ footer > p{
         height: 350px;
     }
     #info{width: 60ch;}
-    /* .projects-box{
-        grid-template-columns: 1fr;
-    } */
+
     .project{
         padding: 1.8rem;
     }
@@ -1084,6 +1078,7 @@ footer > p{
 
     #project-section{padding: 1rem;}
     .project{padding: 1rem;}
+    .pr-lang-icons{padding: 0.4rem 0.5rem 0.3rem 0.3rem;}
 
     #skill-section{
         margin: 0 0.4rem;
