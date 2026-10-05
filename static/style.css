@@ -1010,7 +1010,7 @@ footer > p{
         flex-direction: column;
         padding: 4rem 0;
         border-radius: 15px;
-        background: var(--card-color);
+        background: var(--hero-color);
         background-attachment: fixed;
         border: 1px solid var(--light-white);
         box-shadow: var(--all-side-shadow); 
